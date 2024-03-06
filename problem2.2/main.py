@@ -1,1 +1,0 @@
-bilangan = int(input())

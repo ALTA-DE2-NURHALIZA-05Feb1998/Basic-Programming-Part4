@@ -1,26 +1,49 @@
 import unittest
-from main import pangkat
+from main import mean_median
 
-class TestPangkat(unittest.TestCase):
-    def test_pangkat_2_3(self):
-        result = pangkat(2, 3)
-        self.assertEqual(result, 8, msg="Expected 8 for 2^3")
+class TestMeanMedian(unittest.TestCase):
 
-    def test_pangkat_5_3(self):
-        result = pangkat(5, 3)
-        self.assertEqual(result, 125, msg="Expected 125 for 5^3")
+    def test_mean_median_1(self):
+        input_array = [1, 2, 3, 4]
+        expected_result = (2.5, 2.5)
+        result = mean_median(input_array)
+        msg = f"Expected: {expected_result}, Got: {result}"
+        self.assertEqual(result, expected_result, msg)
 
-    def test_pangkat_10_2(self):
-        result = pangkat(10, 2)
-        self.assertEqual(result, 100, msg="Expected 100 for 10^2")
+    def test_mean_median_2(self):
+        input_array = [1, 2, 3, 4, 5]
+        expected_result = (3.0, 3)
+        result = mean_median(input_array)
+        msg = f"Expected: {expected_result}, Got: {result}"
+        self.assertEqual(result, expected_result, msg)
 
-    def test_pangkat_2_5(self):
-        result = pangkat(2, 5)
-        self.assertEqual(result, 32, msg="Expected 32 for 2^5")
+    def test_mean_median_3(self):
+        input_array = [7, 8, 9, 13, 15]
+        expected_result = (10.4, 9)
+        result = mean_median(input_array)
+        msg = f"Expected: {expected_result}, Got: {result}"
+        self.assertEqual(result, expected_result, msg)
 
-    def test_pangkat_7_3(self):
-        result = pangkat(7, 3)
-        self.assertEqual(result, 343, msg="Expected 343 for 7^3")
+    def test_mean_median_4(self):
+        input_array = [10, 20, 30, 40, 50]
+        expected_result = (30.0, 30)
+        result = mean_median(input_array)
+        msg = f"Expected: {expected_result}, Got: {result}"
+        self.assertEqual(result, expected_result, msg)
+
+    def test_mean_median_5(self):
+        input_array = [15, 20, 30, 60, 120]
+        expected_result = (49.0, 30)
+        result = mean_median(input_array)
+        msg = f"Expected: {expected_result}, Got: {result}"
+        self.assertEqual(result, expected_result, msg)
+
+    def test_mean_median_empty(self):
+        input_array = []
+        expected_result = None
+        result = mean_median(input_array)
+        msg = f"Expected: {expected_result}, Got: {result}"
+        self.assertEqual(result, expected_result, msg)
         
 if __name__ == '__main__':
     unittest.main()

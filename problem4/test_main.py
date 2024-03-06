@@ -1,26 +1,41 @@
 import unittest
-from main import palindrome
+from main import ubah_huruf
 
-class TestPalindrome(unittest.TestCase):
-    def test_palindrome_civic(self):
-        result = palindrome("civic")
-        self.assertEqual(result, True, msg="'civic' is a palindrome, so it should return True")
+class TestUbahHuruf(unittest.TestCase):
+    def test_ubah_huruf_sentence_1(self):
+        input_sentence = "SEPULSA OKE"
+        expected_output = "COZEVCK YUO"
+        result = ubah_huruf(input_sentence)
+        msg = f"Expected: {expected_output}, Got: {result}"
+        self.assertEqual(result, expected_output, msg)
 
-    def test_palindrome_katak(self):
-        result = palindrome("katak")
-        self.assertEqual(result, True, msg="'katak' is a palindrome, so it should return True")
+    def test_ubah_huruf_sentence_2(self):
+        input_sentence = "ALTERRA ACADEMY"
+        expected_output = "KVDOBBK KMKNOWI"
+        result = ubah_huruf(input_sentence)
+        msg = f"Expected: {expected_output}, Got: {result}"
+        self.assertEqual(result, expected_output, msg)
 
-    def test_palindrome_kasur_rusak(self):
-        result = palindrome("kasur rusak")
-        self.assertEqual(result, True, msg="'kasur rusak' is a palindrome, so it should return True")
+    def test_ubah_huruf_sentence_3(self):
+        input_sentence = "INDONESIA"
+        expected_output = "SXNYXOCSK"
+        result = ubah_huruf(input_sentence)
+        msg = f"Expected: {expected_output}, Got: {result}"
+        self.assertEqual(result, expected_output, msg)
 
-    def test_palindrome_kupu_kupu(self):
-        result = palindrome("kupu-kupu")
-        self.assertEqual(result, False, msg="'kupu-kupu' is not a palindrome, so it should return False")
-
-    def test_palindrome_lion(self):
-        result = palindrome("lion")
-        self.assertEqual(result, False, msg="'lion' is not a palindrome, so it should return False")
+    def test_ubah_huruf_sentence_4(self):
+        input_sentence = "GOLANG"
+        expected_output = "QYVKXQ"
+        result = ubah_huruf(input_sentence)
+        msg = f"Expected: {expected_output}, Got: {result}"
+        self.assertEqual(result, expected_output, msg)
+        
+    def test_ubah_huruf_sentence_5(self):
+        input_sentence = "PROGRAMMER"
+        expected_output = "ZBYQBKWWOB"
+        result = ubah_huruf(input_sentence)
+        msg = f"Expected: {expected_output}, Got: {result}"
+        self.assertEqual(result, expected_output, msg)
         
 if __name__ == '__main__':
     unittest.main()

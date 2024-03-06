@@ -1,9 +1,28 @@
-def prime_number(num):
-    return "error response'
+def cetak_table_perkalian(number):
+    pattern = ""
+    max_chars = 190  # Jumlah maksimal karakter per baris
+    for i in range(1, number + 1):
+        row = ""
+        for j in range(1, number + 1):
+            result = i * j
+            entry = f'{result} '
+            if len(row) + len(entry) <= max_chars:
+                row += entry
+            else:
+                break
+        pattern +=' '+ row.rstrip() + '\n'
+    return pattern
 
 if __name__ == '__main__':
-    print(prime_number(11)) # "Prime"
-    print(prime_number(13)) # "Prime"
-    print(prime_number(17)) # "Prime"
-    print(prime_number(20)) # "Not Prime"
-    print(prime_number(35)) # "Not Prime"
+    print(cetak_table_perkalian(9))
+    """
+     1 2 3 4 5 6 7 8 9
+     2 4 6 8 10 12 14 16 18
+     3 6 9 12 15 18 21 24 27
+     4 8 12 16 20 24 28 32 36
+     5 10 15 20 25 30 35 40 45
+     6 12 18 24 30 36 42 48 54
+     7 14 21 28 35 42 49 56 63
+     8 16 24 32 40 48 56 64 72
+     9 18 27 36 45 54 63 72 81
+    """
